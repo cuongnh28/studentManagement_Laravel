@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <title>Đăng nhập</title>
-    <!-- <link rel="stylesheet" href="main.css" /> -->
     <style>
         body {font-family:Arial, Sans-Serif;}
         .clearfix:before, .clearfix:after { content: ""; display: table; }

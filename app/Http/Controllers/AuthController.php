@@ -14,20 +14,30 @@ class AuthController extends Controller
         $password = $request['password'];
         if(Auth::attempt(['username'=>$username, 'password'=>$password]))
         {
-//            echo "Loi";
-            if(Auth::user()->level == 1)
+            session(['id' => Auth::id()]);
+            session(['username' => $username]);
+//            return session('id');
+            if(Auth::user()->level == 0)
             {
+                session(['level' => 0]);
                 return redirect('/teacher');
             }
-
             else
             {
+                session(['level' => 1]);
                 return redirect('/student');
             }
         }
-        else{
+        else
+        {
 //        echo "Loi";
         return view('login');
+        }
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
     }
 }

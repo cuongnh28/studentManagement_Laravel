@@ -30,5 +30,13 @@ class DatabaseSeeder extends Seeder
             'email'=>'cuong@gmail.com',
             'phone'=>'0336445423',
         ]);
+
+        DB::table('users')->insert([
+            'username'=>'nam',
+            'password'=>bcrypt('1'),
+            'name'=>'Nam Choac',
+            'email'=>'nam@gmail.com',
+            'phone'=>'0336445423',
+        ]);
     }
 }

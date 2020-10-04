@@ -11,6 +11,9 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
@@ -138,6 +141,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\qlsv\resources\views\Message" />
+      <recent name="C:\xampp\htdocs\qlsv\resources\views\Teacher" />
+      <recent name="C:\xampp\htdocs\qlsv\resources\views\Student" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -153,7 +163,13 @@
       <option name="presentableId" value="Default" />
       <updated>1601614431511</updated>
       <workItem from="1601614432587" duration="76000" />
-      <workItem from="1601617082450" duration="2162000" />
+      <workItem from="1601617082450" duration="15374000" />
+      <workItem from="1601646590458" duration="4752000" />
+      <workItem from="1601774731804" duration="8014000" />
+      <workItem from="1601783028299" duration="2393000" />
+      <workItem from="1601785580254" duration="80000" />
+      <workItem from="1601792792204" duration="12712000" />
+      <workItem from="1601818800532" duration="7081000" />
     </task>
     <servers />
   </component>
@@ -165,5 +181,31 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="428" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1601618273835" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601779300537">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1601779300537" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1601626287020">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1601626287020" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1601775071803">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1601775071803" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1601776796038">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1601776796038" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/Student/create_student.blade.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
