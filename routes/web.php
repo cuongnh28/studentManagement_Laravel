@@ -74,3 +74,25 @@ Route::post('message/edited', 'App\Http\Controllers\MessageController@update')->
 
 //Xoa tin nhan.
 Route::get('message/delete/{id}', 'App\Http\Controllers\MessageController@destroy')->name('deleteMessage');
+
+//Assignment.
+//Trang chung cua bai tap.
+Route::get('assignment/index', 'App\Http\Controllers\AssignmentController@index')->name('assignment');
+
+//Luu assignment vao folder.
+Route::post('assignment/store', 'App\Http\Controllers\AssignmentController@storeAssignment')->name('storeAssignment');
+
+//Download cau hoi.
+Route::get('assignment/download/{file}', 'App\Http\Controllers\AssignmentController@downloadAssignment')->name('downloadAssignment');
+
+//Them cau tra loi.
+Route::get('assignment/submit', 'App\Http\Controllers\AssignmentController@submit')->name('submitAnswer');
+
+//Luu answer vao folder.
+Route::post('answer/store', 'App\Http\Controllers\AssignmentController@storeAnswer')->name('storeAnswer');
+
+//List cau tra loi.
+Route::get('assignment/listAnswers', 'App\Http\Controllers\AssignmentController@listAnswer')->name('listAnswer');
+
+//Download cau tra loi.
+Route::get('answer/download/{file}', 'App\Http\Controllers\AssignmentController@downloadAnswer')->name('downloadAnswer');
