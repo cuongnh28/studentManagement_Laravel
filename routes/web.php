@@ -96,3 +96,16 @@ Route::get('assignment/listAnswers', 'App\Http\Controllers\AssignmentController@
 
 //Download cau tra loi.
 Route::get('answer/download/{file}', 'App\Http\Controllers\AssignmentController@downloadAnswer')->name('downloadAnswer');
+
+//Challenge
+//Trang chu cua challenge.
+Route::get('challenge/index', 'App\Http\Controllers\ChallengeController@index')->name('challenge');
+
+//Upload challenge.
+Route::post('challenge/upload', 'App\Http\Controllers\ChallengeController@upload')->name('challengeUpload');
+
+//Man hinh submit soltution challenge.
+Route::get('challenge/{folder}', 'App\Http\Controllers\ChallengeController@show')->name('challengeSolveView');
+
+//Submit va kiem tra challenge.
+Route::post('challenge/solve/{folder}', 'App\Http\Controllers\ChallengeController@solve')->name('challengeSolve');

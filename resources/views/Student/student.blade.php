@@ -53,7 +53,7 @@
     <a href="{{ route('editStudent', session('id'))}}">Sửa thông tin</a>
     <a href="{{route('listUsers')}}">Xem danh sách người dùng</a>
     <a href="{{route('assignment')}}">Bài tập</a>
-    <a href=>Xem Challenge</a>
+    <a href="{{route('challenge')}}">Challenge</a>
     <a href="{{route('inbox', session('username'))}}">Hộp thư đến</a>
     <a href="{{route('outbox', session('username'))}}">Hộp thư đi</a>
     <a href="{{url('logout')}}">Đăng xuất</a>

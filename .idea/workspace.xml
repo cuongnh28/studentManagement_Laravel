@@ -178,6 +178,8 @@
       <workItem from="1601888552166" duration="3149000" />
       <workItem from="1601903438661" duration="5935000" />
       <workItem from="1601909403435" duration="3610000" />
+      <workItem from="1601947781898" duration="5961000" />
+      <workItem from="1601954263074" duration="1130000" />
     </task>
     <servers />
   </component>
@@ -189,6 +191,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="428" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1601618273835" />
+    <state x="420" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601948403006">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="420" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1601948403006" />
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601779300537">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -197,10 +203,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1601626287020" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1601775071803">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1601954636558">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1601775071803" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1601954636558" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1601776796038">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

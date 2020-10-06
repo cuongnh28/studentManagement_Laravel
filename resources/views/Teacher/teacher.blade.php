@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <title>CSS Website Layout</title>
+    <title>Teacher</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -54,7 +54,7 @@
     <a href="{{ route('createStudent') }}">Thêm sinh viên</a>
     <a href="{{route('listUsers')}}">Xem danh sách người dùng</a>
     <a href="{{route('assignment')}}">Bài tập</a>
-    <a href="viewChallenge.php">Challenge</a>
+    <a href="{{route('challenge')}}">Challenge</a>
     <a href="{{route('inbox', session('username'))}}">Hộp thư đến</a>
     <a href="{{route('outbox', session('username'))}}">Hộp thư đi</a>
     <a href="{{url('logout')}}">Đăng xuất</a>

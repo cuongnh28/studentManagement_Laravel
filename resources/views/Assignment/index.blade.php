@@ -41,10 +41,8 @@
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th width=1150>Danh sách bài tập</th>
-            @if(session('level')==1)
-                <th width=1150><b>Nộp bài</b></th>
-            @endif
+            <th width=950>Danh sách bài tập</th>
+            <th width=550><b>Hành động</b></th>
         </tr>
         </thead>
         <tbody>
@@ -52,15 +50,14 @@
             <tr>
                 <td><a href="{{ route('downloadAssignment', $file->getFileName())}}">{{$file->getFileName()}}</a></td>
                 @if(session('level')==1)
-                <th><button class="button-submit" onclick="window.location='{{route('submitAnswer')}}'">Nộp bài</button></th>
+                    <th><button class="button-submit" onclick="window.location='{{route('submitAnswer')}}'">Nộp bài</button></th>
+                @else
+                    <th><button class="button-submit" onclick="window.location='{{route('listAnswer')}}'">Bài làm</button></th>
                 @endif
             </tr>
         @endforeach
         </tbody>
     </table>
-    @if(session('level')==0)
-    <br><th><button class="button-submit" onclick="window.location='{{route('listAnswer')}}'">Xem bài làm của sinh viên</button></th>
-    @endif
 </div>
 </body>
 </html>
