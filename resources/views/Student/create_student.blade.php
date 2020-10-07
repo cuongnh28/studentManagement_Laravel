@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    @extends(session('level')==0 ? 'Teacher.teacher' : 'Student.student')
+    @extends('Layout.header')
     @section('content')
     <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <style>
             body {font-family:Arial, Sans-Serif;}
             .clearfix:before, .clearfix:after { content: ""; display: table; }
@@ -16,20 +17,27 @@
             input[type='submit']:hover {background-color: #024978;}
         </style>
     <title>Thêm sinh viên</title>
-    <link rel="stylesheet" href="Css/main.css"/>
 </head>
 <body>
 <div class="form">
     <h1>Thêm Sinh Viên</h1>
     <form name="add_student" action="{{ route('storeStudent') }}" method="post">
-        {{ csrf_field() }}
+        @csrf
         <input type="text" name="username" placeholder="Tên đăng nhập" required/>
         <input type="text" name="name" placeholder="Họ và tên" required/>
         <input type="email" name="email" placeholder="Email" required/>
         <input type="text" name="phone" placeholder="Số điện thoại" required/>
-        <input type="password" name="password" placeholder="Mật khẩu" required/> <br>
-        <input type="submit" style="background-color:#28a745" name="submit" value="Thêm"/>
+        <input type="password" name="password" placeholder="Mật khẩu" required/> <br><br>
+        <td><button type="submit" class="btn btn-success" name="submit">Thêm</button></td>
+{{--        <input type="submit" style="background-color:#28a745" name="submit" value="Thêm"/>--}}
     </form>
+    @if(Session::has('success'))
+        <p style="color: #5cb85c"><strong>{{Session::get('success')}}</strong></p>
+    @elseif(Session::has('error'))
+        <p style="color: #ff0000"><strong>{{Session::get('error')}}</strong></p>
+    @elseif(Session::has('exists'))
+        <p style="color: #ff0000"><strong>{{Session::get('exists')}}</strong></p>
+    @endif
 </div>
 </body>
 @endsection

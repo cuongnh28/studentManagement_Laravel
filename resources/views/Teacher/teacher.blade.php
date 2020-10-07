@@ -41,6 +41,9 @@
             background-color: #ddd;
             color: black;
         }
+        a{
+            text-decoration: none !important;
+        }
     </style>
 </head>
 <body>
@@ -49,7 +52,7 @@
 </div>
 
 <div class="topnav">
-    <a href="">Trang chủ</a>
+    <a href="{{url('teacher')}}">Trang chủ</a>
     <a href="{{ route('editTeacher', session('id'))}}">Sửa thông tin</a>
     <a href="{{ route('createStudent') }}">Thêm sinh viên</a>
     <a href="{{route('listUsers')}}">Xem danh sách người dùng</a>

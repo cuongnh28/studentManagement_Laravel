@@ -3,8 +3,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use MongoDB\Driver\Session;
-Use \Carbon\Carbon;
+use Session;
+
 
 
 
@@ -46,16 +46,8 @@ class MessageController extends Controller
     public function store(Request $request, $receiver)
     {
         $requestAll = $request->all();
+        //Chuc nang nhan tin.
         if(session('check')=='inbox')
-        {
-            $dataInsert = array(
-                'sender' => $receiver,
-                'receiver' => session('username'),
-                'message' => $requestAll['message']
-            );
-        }
-        //oke de check luon sao no bi loi gi nha, con la lam.
-        else
         {
             $dataInsert = array(
                 'receiver' => $receiver,
@@ -63,34 +55,27 @@ class MessageController extends Controller
                 'message' => $requestAll['message']
             );
         }
+        //Chuc nang reply
+        else
+        {
+            $dataInsert = array(
+                'sender' => $receiver,
+                'receiver' => session('username'),
+                'message' => $requestAll['message']
+            );
+        }
         $insertData = DB::table('messages')->insert($dataInsert);
         if($insertData)
         {
-            echo "Thanh cong.";
+            Session::flash('success', 'Gửi tin nhắn thành công. ✔');
         }
         else
         {
-            echo "Thêm thất bại";
+            Session::flash('error', 'Gửi tin nhắn thất bại! 〤');
         }
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->back();
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //        echo $id;
@@ -112,17 +97,18 @@ class MessageController extends Controller
     {
         $updateData = DB::table('messages')->where('id', $request->id)->update([
             'message' => $request->message,
-            'create_at' => Carbon::now()
+            'create_at' => now()
         ]);
 
         //Kiểm tra lệnh update để trả về một thông báo
         if ($updateData) {
-//            Session::flash('success', 'Sửa học sinh thành công!');
-            echo "Thanh cong";
+            Session::flash('success', 'Sửa tin nhắn thành công! ✔ ');
+//            echo "Thanh cong";
         }else {
-//            Session::flash('error', 'Sửa thất bại!');
-            echo "That bai";
+            Session::flash('error', 'Sửa tin nhắn thất bại! 〤');
+//            echo "That bai";
         }
+        return redirect()->back();
     }
 
     /**
@@ -137,11 +123,12 @@ class MessageController extends Controller
 
         if($deleteData)
         {
-            echo "Xoa thanh cong";
+            Session::flash('success', 'Xóa tin nhắn thành công! ✔');
         }
         else
         {
-            echo "Xoa that bai";
+            Session::flash('success', 'Xóa tin nhắn thất bại! 〤');
         }
+        return redirect()->back();
     }
 }

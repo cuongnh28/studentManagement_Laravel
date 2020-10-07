@@ -49,7 +49,7 @@
 </div>
 
 <div class="topnav">
-    <a href="studentView.php">Trang chủ</a>
+    <a href="{{url('student')}}">Trang chủ</a>
     <a href="{{ route('editStudent', session('id'))}}">Sửa thông tin</a>
     <a href="{{route('listUsers')}}">Xem danh sách người dùng</a>
     <a href="{{route('assignment')}}">Bài tập</a>

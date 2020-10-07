@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    @extends(session('level')==0 ? 'Teacher.teacher' : 'Student.student')
-    @section('content')
+@extends('Layout.header')
+@section('content')
 <style>
     .table-bordered td, .table-bordered th {
         border: 1px solid #dee2e6;
@@ -39,26 +39,26 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container" style="margin-left: 20px; margin-bottom: 15px">
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th width=200>Người gửi</th>
-            <th width=200>Người nhận</th>
-            <th width=400>Nội dung</th>
+            <th width=150>Người gửi</th>
+            <th width=150>Người nhận</th>
+            <th width=600>Nội dung</th>
             <th width=300>Thời gian</th>
-            <th width=200>Action</th>
-            <th width=200>Action</th>
+            <th width=90>Action</th>
+            <th width=90>Action</th>
         </tr>
         </thead>
         @foreach($outbox as $key=>$message)
             <tr>
-            <td width=200>{{$message->sender}}</td>
-            <td width=200>{{$message->receiver}}</td>
-            <td width=400>{{$message->message}}</td>
+            <td width=150>{{$message->sender}}</td>
+            <td width=150>{{$message->receiver}}</td>
+            <td width=600>{{$message->message}}</td>
             <td width=300>{{$message->create_at}}</td>
-            <td width=200><button class="btn btn-warning" onclick="window.location='{{ route('editMessage', $message->id) }}'">Edit</button></td>
-            <td width=200><button class="button btn-danger" onclick="window.location='{{ route("deleteMessage", $message->id) }}'">Delete</button></td>
+            <td width=90><button class="btn btn-warning" onclick="window.location='{{ route('editMessage', $message->id) }}'">Sửa</button></td>
+            <td width=90><button class="btn btn-danger" onclick="window.location='{{ route("deleteMessage", $message->id) }}'">Xóa</button></td>
             </tr>
         @endforeach
         <tbody>
@@ -67,5 +67,10 @@
     </table>
 </div>
 </body>
+@if(Session::has('success'))
+    <br><p style="color: #5cb85c"><strong>{{Session::get('success')}}</strong></p>
+@elseif(Session::has('error'))
+    <br><p style="color: #ff0000"><strong>{{Session::get('error')}}</strong></p>
+@endif
 @endsection
 </html>

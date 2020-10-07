@@ -20,13 +20,12 @@ class AuthController extends Controller
             if(Auth::user()->level == 0)
             {
                 session(['level' => 0]);
-                return redirect('/teacher');
             }
             else
             {
                 session(['level' => 1]);
-                return redirect('/student');
             }
+            return redirect('/home');
         }
         else
         {

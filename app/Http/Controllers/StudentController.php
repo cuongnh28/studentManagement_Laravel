@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
-use MongoDB\Driver\Session;
+use Session;
 
 class StudentController extends Controller
 {
@@ -59,17 +59,23 @@ class StudentController extends Controller
             'password'=>$password,
             'name'=>$name
         );
+        $user = DB::table('users')->where('username',$username)->first();
+        if($user)
+        {
+            Session::flash('exists', 'Username đã tồn tại, mời nhập lại. 〤');
+            return redirect()->back();
+        }
         $insertData = DB::table('Users')->insert($dataInsert);
 
         if($insertData)
         {
-            echo "<div class='form'><h3>Bạn đã thêm sinh viên thành công</h3><br/>Click để Quay lại</div>";
-//        return redirect('student/add'); //chua them link
+            Session::flash('success', 'Thêm sinh viên thành công ✔');
         }
         else
         {
-            echo "Thêm thất bại";
+            Session::flash('error', 'Thêm sinh viên thất bại 〤');
         }
+        return redirect()->back();
     }
 
     /**
@@ -109,25 +115,29 @@ class StudentController extends Controller
     public function update(Request $request)
     {
         //Cap nhat sua sinh vien
-
+        $newPassword = $request->password;
+        $getData = DB::table('Users')->select('password')->where('id', $request->id)->get();
+        $oldPassword = $getData[0]->password;
+        if($newPassword != $oldPassword)
+        {
+            $newPassword = bcrypt($newPassword);
+        }
         //Thực hiện câu lệnh update với các giá trị $request trả về
         $updateData = DB::table('Users')->where('id', $request->id)->update([
-            'password' => $request->password,
+            'password' => $newPassword,
             'email' => $request->email,
             'phone' => $request->phone
         ]);
 
         //Kiểm tra lệnh update để trả về một thông báo
         if ($updateData) {
-            Session::flash('success', 'Sửa học sinh thành công!');
-            echo "Thanh cong";
+            Session::flash('success', 'Sửa thông tin thành công! ✔');
         }else {
-//            Session::flash('error', 'Sửa thất bại!');
-            echo "That bai";
+            Session::flash('error', 'Sửa thông tin thất bại! 〤');
         }
 
         //Thực hiện chuyển trang
-//        return redirect('hocsinh');
+        return redirect()->back();
     }
 
     /**
@@ -142,11 +152,13 @@ class StudentController extends Controller
 
         if($deleteData)
         {
-            echo "Xoa thanh cong";
+            Session::flash('success', 'Xóa sinh viên thành công. ✔');
         }
         else
         {
-            echo "Xoa that bai";
+            Session::flash('error', 'Thêm sinh viên thất bại 〤');
         }
+
+        return redirect()->back();
     }
 }

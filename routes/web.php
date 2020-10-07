@@ -23,14 +23,9 @@ Route::get('logout', 'App\Http\Controllers\AuthController@logout')->name('logout
 
 Route::get('list_users', 'App\Http\Controllers\UserController@index')->name('listUsers')->middleware('auth');;
 
-//Teacher Home
-Route::get('teacher', function(){
-    return view('Teacher.teacher');
-})->middleware('auth');
-
-//Student Home
-Route::get('student', function(){
-    return view('Student.student');
+//Trang chu
+Route::get('home', function(){
+    return view('home');
 })->middleware('auth');
 
 //Edit Teacher
@@ -98,8 +93,11 @@ Route::get('assignment/listAnswers', 'App\Http\Controllers\AssignmentController@
 Route::get('answer/download/{file}', 'App\Http\Controllers\AssignmentController@downloadAnswer')->name('downloadAnswer');
 
 //Challenge
-//Trang chu cua challenge.
-Route::get('challenge/index', 'App\Http\Controllers\ChallengeController@index')->name('challenge');
+//Them challenge.
+Route::get('challenge/add', 'App\Http\Controllers\ChallengeController@add')->name('addChallenge');
+
+//List challenge.
+Route::get('challenge/list', 'App\Http\Controllers\ChallengeController@list')->name('listChallenge');
 
 //Upload challenge.
 Route::post('challenge/upload', 'App\Http\Controllers\ChallengeController@upload')->name('challengeUpload');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 class TeacherController extends Controller
 {
@@ -57,8 +58,6 @@ class TeacherController extends Controller
      */
     public function edit($id)
     {
-//                echo $id;
-
         //Lấy dữ liệu từ Database với các trường được lấy và với điều kiện id = $id
         $getData = DB::table('Users')->select('id','username','name', 'email', 'phone', 'password')->where('id',$id)->get();
 
@@ -76,25 +75,32 @@ class TeacherController extends Controller
     public function update(Request $request)
     {
         //Cap nhat sua giao vien
-
+        $newPassword = $request->password;
+        $getData = DB::table('Users')->select('password')->where('id', $request->id)->get();
+        $oldPassword = $getData[0]->password;
+        if($newPassword != $oldPassword)
+        {
+            $newPassword = bcrypt($newPassword);
+        }
         //Thực hiện câu lệnh update với các giá trị $request trả về
         $updateData = DB::table('Users')->where('id', $request->id)->update([
-            'password' => $request->password,
+            'password' => $newPassword,
             'email' => $request->email,
             'phone' => $request->phone
         ]);
 
         //Kiểm tra lệnh update để trả về một thông báo
-        if ($updateData) {
-//            Session::flash('success', 'Sửa học sinh thành công!');
-            echo "Thanh cong";
-        }else {
-//            Session::flash('error', 'Sửa thất bại!');
-            echo "That bai";
+        if ($updateData)
+        {
+            Session::flash('success', 'Sửa thông tin thành công! ✔');
+        }
+        else
+        {
+            Session::flash('error', 'Sửa thông tin thất bại! 〤');
         }
 
         //Thực hiện chuyển trang
-//        return redirect('hocsinh');
+        return redirect()->back();
     }
 
     /**

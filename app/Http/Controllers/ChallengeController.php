@@ -15,10 +15,15 @@ class ChallengeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function add()
+    {
+        return view('Challenge.add');
+    }
+
+    public function list()
     {
         $challenges = DB::table('challenges')->select('filename', 'suggest')->get();
-        return view('Challenge.index')->with('challenges', $challenges);
+        return view('Challenge.list')->with('challenges', $challenges);
     }
 
     /**

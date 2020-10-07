@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    @extends('Layout.header')
+    @section('content')
     <meta charset="UTF-8">
     <title>List Student's answers</title>
     <style>
@@ -24,7 +26,7 @@
     </style>
     <title>Bài làm của sinh viên</title>
     <div>
-        <h2 style='margin-left:450px;'>Danh sách bài tập đã nộp</h2>
+        <h2>Danh sách bài tập đã nộp</h2>
     </div>
 
     <!-- jQuery library -->
@@ -35,7 +37,7 @@
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container" style="margin-left: 20px; margin-bottom: 15px">
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -56,5 +58,7 @@
         </tbody>
     </table>
 </div>
+<div id="footer"> Copyright &copy;2020 by hongcuongnguyen </div>
 </body>
 </html>
+@endsection

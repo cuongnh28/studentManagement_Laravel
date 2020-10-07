@@ -1,62 +1,44 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    @extends(session('level')==0 ? 'Teacher.teacher' : 'Student.student')
+    @extends('Layout.header')
     @section('content')
-    <link rel="stylesheet" href="Css/footer.css">
-    <title>Edit Student Form</title>
-    <meta charset="UTF-8">
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <style>
+            body {font-family:Arial, Sans-Serif;}
+            .clearfix:before, .clearfix:after { content: ""; display: table; }
+            .clearfix:after { clear: both; }
+            a {color:#0067ab; text-decoration:none;}
+            a:hover {text-decoration:underline;}
+            .form{width: 300px; margin: 0 auto;}
+            input[type='text'], input[type='email'], input[type='password'] {width: 200px; border-radius: 2px;border: 1px solid #CCC; padding: 10px; color: #333; font-size: 14px; margin-top: 10px;}
+            input[type='submit']{padding: 10px 25px 8px; color: #fff; background-color: #0067ab; text-shadow: rgba(0,0,0,0.24) 0 1px 0; font-size: 16px; box-shadow: rgba(255,255,255,0.24) 0 2px 0 0 inset,#fff 0 1px 0 0; border: 1px solid #0164a5; border-radius: 2px; margin-top: 10px; cursor:pointer;}
+            input[type='submit']:hover {background-color: #024978;}
+        </style>
+        <title>Sửa sinh viên</title>
 </head>
 <body>
-<div class="container">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h2 class="text-center">Edit Student</h2>
-        </div>
-        <div class="panel-body">
-            <form action={{route('updateStudent')}} method="post">
-                {{ csrf_field() }}
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" class="form-control" id="username" name="username" value="{{$getStudentById[0]->username}}"
-                           disabled>
-                </div>
-                <div class="form-group">
-                    <label for="usr">Name:</label>
-                    <input type="number" name="id" value="{{$getStudentById[0]->id}}" style="display: none;">
-                    <input required="true" type="text" class="form-control" id="usr" name="name" value="{{$getStudentById[0]->name}}"
-                           disabled>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input required="true" type="email" class="form-control" id="email" name="email"
-                           value="{{$getStudentById[0]->email}}">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone:</label>
-                    <input type="phone" class="form-control" id="phone" name="phone" value="{{$getStudentById[0]->phone}}">
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input required="true" type="password" class="form-control" id="password" name="password"
-                           value="{{$getStudentById[0]->password}}">
-                </div>
-                <button class="btn btn-success">Save</button>
-            </form>
-        </div>
-    </div>
+<div class="form">
+    <h1>Sửa thông tin</h1>
+    <form name="edit_student" action="{{ route('updateStudent') }}" method="post">
+        @csrf
+        <input type="text" name="id" value="{{$getStudentById[0]->id}}"
+               hidden>
+        <input type="text" name="username" placeholder="Tên đăng nhập" value="{{$getStudentById[0]->username}}"
+               disabled>
+        <input type="text" name="name" placeholder="Họ và tên" value="{{$getStudentById[0]->name}}"
+               disabled>
+        <input type="email" name="email" placeholder="Email" value="{{$getStudentById[0]->email}}">
+        <input type="text" name="phone" placeholder="Số điện thoại" value="{{$getStudentById[0]->phone}}">
+        <input type="password" name="password" placeholder="Mật khẩu" value="{{$getStudentById[0]->password}}"> <br><br>
+        <td><button type="submit" class="btn btn-warning" name="submit">Sửa</button></td>
+    </form>
+    @if(Session::has('success'))
+        <p style="color: #5cb85c"><strong>{{Session::get('success')}}</strong></p>
+    @elseif(Session::has('error'))
+        <p style="color: #ff0000"><strong>{{Session::get('error')}}</strong></p>
+    @endif
 </div>
 </body>
 @endsection

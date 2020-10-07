@@ -137,12 +137,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\qlsv\public\css" />
+      <recent name="C:\xampp\htdocs\qlsv\resources\css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\qlsv\resources\views\Layout" />
+      <recent name="C:\xampp\htdocs\qlsv\public\css" />
       <recent name="C:\xampp\htdocs\qlsv\resources\views\Message" />
       <recent name="C:\xampp\htdocs\qlsv\resources\views\Teacher" />
       <recent name="C:\xampp\htdocs\qlsv\resources\views\Student" />
@@ -180,6 +186,11 @@
       <workItem from="1601909403435" duration="3610000" />
       <workItem from="1601947781898" duration="5961000" />
       <workItem from="1601954263074" duration="1130000" />
+      <workItem from="1601996888051" duration="145000" />
+      <workItem from="1602036482699" duration="8847000" />
+      <workItem from="1602045382155" duration="1247000" />
+      <workItem from="1602069037805" duration="2857000" />
+      <workItem from="1602077474189" duration="13238000" />
     </task>
     <servers />
   </component>
@@ -187,10 +198,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="428" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601618273835">
+    <state x="428" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602088733036">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="428" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1601618273835" />
+    <state x="428" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1602088733036" />
     <state x="420" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601948403006">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -19,7 +19,7 @@
 <div class="form">
     <h1>Đăng nhập</h1>
     <form action="{{ route('login') }}" method="post" name="login">
-        {{ csrf_field() }}
+        @csrf
         <input type="text" name="username" placeholder="Tên đăng nhập" required />
         <input type="password" name="password" placeholder="Mật khẩu" required />
         <input name="submit" type="submit" value="Đăng nhập" />

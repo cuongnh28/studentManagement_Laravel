@@ -16,27 +16,28 @@ class DatabaseSeeder extends Seeder
     {
         DB::table('users')->insert([
             'username'=>'quan',
-            'password'=>bcrypt('1'),
+            'password'=>bcrypt('12345'),
             'name'=>'Trung Quan',
             'email'=>'quan@gmail.com',
+            'phone'=>'0336445423',
+        ]);
+
+        DB::table('users')->insert([
+            'username'=>'cuong',
+            'password'=>bcrypt('12345'),
+            'name'=>'Hong Cuong',
+            'email'=>'cuong@gmail.com',
             'phone'=>'0336445423',
             'level'=>'1'
         ]);
 
         DB::table('users')->insert([
-            'username'=>'cuong',
-            'password'=>bcrypt('1'),
-            'name'=>'Hong Cuong',
-            'email'=>'cuong@gmail.com',
-            'phone'=>'0336445423',
-        ]);
-
-        DB::table('users')->insert([
             'username'=>'nam',
-            'password'=>bcrypt('1'),
+            'password'=>bcrypt('12345'),
             'name'=>'Nam Choac',
             'email'=>'nam@gmail.com',
             'phone'=>'0336445423',
+            'level'=>'1'
         ]);
     }
 }

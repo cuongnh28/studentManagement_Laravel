@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 class AssignmentController extends Controller
 {
@@ -33,17 +34,18 @@ class AssignmentController extends Controller
             if (! File::exists($dir))
             {
                 $file->move('uploads/assignment/', $file->getClientOriginalName());
-                echo "Them file thanh cong.";
+                Session::flash('success', 'Bạn đã thêm bài tập thành công. ✔');
             }
             else
             {
-                echo "Them file that bai.";
-//                return redirect()->back()->with('alert', 'File Exist!');
+                Session::flash('error', 'Bài tập đã tồn tại. 〤');
             }
         }
-        else{
-            echo "Ban chua them file.";
+        else
+        {
+            Session::flash('error', 'Bạn chưa chọn file. 〤');
         }
+        return redirect()->back();
     }
 
     public function storeAnswer(Request $request)
@@ -61,16 +63,17 @@ class AssignmentController extends Controller
                         'filename' => $file->getClientOriginalName(),
                         'create_at' => now(),
                     ]);
-                echo "Them cau hoi thanh cong.";
+                Session::flash('success', 'Bạn đã thêm bài làm thành công. ✔');
             }
             else
             {
-                echo "Them cau hoi that bai.";
+                Session::flash('error', 'Bài làm đã tồn tại. 〤');
             }
         }
         else{
-            echo "Ban chua them file.";
+            Session::flash('error', 'Bạn chưa chọn file. 〤');
         }
+        return redirect()->back();
     }
 
     public function listAnswer(){
