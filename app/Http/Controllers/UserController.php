@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $getdata = DB::table('Users')->select('id','username','name','password','email','phone','level')->get();
+        $getdata = DB::table('users')->select('id','username','name','password','email','phone','level')->get();
         return view('list_users')->with('listusers', $getdata);
     }
 

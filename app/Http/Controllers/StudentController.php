@@ -65,7 +65,7 @@ class StudentController extends Controller
             Session::flash('exists', 'Username đã tồn tại, mời nhập lại. 〤');
             return redirect()->back();
         }
-        $insertData = DB::table('Users')->insert($dataInsert);
+        $insertData = DB::table('users')->insert($dataInsert);
 
         if($insertData)
         {
@@ -116,14 +116,14 @@ class StudentController extends Controller
     {
         //Cap nhat sua sinh vien
         $newPassword = $request->password;
-        $getData = DB::table('Users')->select('password')->where('id', $request->id)->get();
+        $getData = DB::table('users')->select('password')->where('id', $request->id)->get();
         $oldPassword = $getData[0]->password;
         if($newPassword != $oldPassword)
         {
             $newPassword = bcrypt($newPassword);
         }
         //Thực hiện câu lệnh update với các giá trị $request trả về
-        $updateData = DB::table('Users')->where('id', $request->id)->update([
+        $updateData = DB::table('users')->where('id', $request->id)->update([
             'password' => $newPassword,
             'email' => $request->email,
             'phone' => $request->phone
@@ -148,7 +148,7 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        $deleteData = DB::table('Users')->where('id', '=', $id)->delete();
+        $deleteData = DB::table('users')->where('id', '=', $id)->delete();
 
         if($deleteData)
         {

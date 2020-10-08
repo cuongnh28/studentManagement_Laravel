@@ -59,7 +59,7 @@ class TeacherController extends Controller
     public function edit($id)
     {
         //Lấy dữ liệu từ Database với các trường được lấy và với điều kiện id = $id
-        $getData = DB::table('Users')->select('id','username','name', 'email', 'phone', 'password')->where('id',$id)->get();
+        $getData = DB::table('users')->select('id','username','name', 'email', 'phone', 'password')->where('id',$id)->get();
 
         //Tra ve Data voi id truyen vao.
         return view('Teacher.edit_teacher')->with('getTeacherById',$getData);
@@ -76,14 +76,14 @@ class TeacherController extends Controller
     {
         //Cap nhat sua giao vien
         $newPassword = $request->password;
-        $getData = DB::table('Users')->select('password')->where('id', $request->id)->get();
+        $getData = DB::table('users')->select('password')->where('id', $request->id)->get();
         $oldPassword = $getData[0]->password;
         if($newPassword != $oldPassword)
         {
             $newPassword = bcrypt($newPassword);
         }
         //Thực hiện câu lệnh update với các giá trị $request trả về
-        $updateData = DB::table('Users')->where('id', $request->id)->update([
+        $updateData = DB::table('users')->where('id', $request->id)->update([
             'password' => $newPassword,
             'email' => $request->email,
             'phone' => $request->phone
