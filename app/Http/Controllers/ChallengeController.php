@@ -49,7 +49,7 @@ class ChallengeController extends Controller
     {
         $challenges = DB::table('challenges')->where('filename', $folder);
         $suggest = $challenges->value('suggest');
-        return view('challenge.solve', compact('suggest', 'folder'));
+        return view('Challenge.solve', compact('suggest', 'folder'));
     }
 
     public function solve($folder, Request $request)
@@ -60,7 +60,7 @@ class ChallengeController extends Controller
         if(File::exists($filename))
         {
             $content = File::get(public_path($filename));
-            return view('challenge.content', compact('content'));
+            return view('Challenge.content', compact('content'));
         }
         else
         {
