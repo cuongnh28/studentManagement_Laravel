@@ -1,5 +1,5 @@
-Bài làm: challenge 5b – Lập trình Laravel cơ bản.
-Nguyễn Hồng Cường - Thực tập sinh phòng Bigdata &Machine Learning.
+- Bài làm: challenge 5b – Lập trình Laravel cơ bản.
+- Nguyễn Hồng Cường - Thực tập sinh phòng Bigdata &Machine Learning.
 
 1. Link website: https://laravel-hongcuongnguyen.000webhostapp.com/
 2. Link github:
