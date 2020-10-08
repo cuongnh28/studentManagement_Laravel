@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 
 class ChallengeController extends Controller
@@ -26,12 +27,6 @@ class ChallengeController extends Controller
         return view('Challenge.list')->with('challenges', $challenges);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function upload(Request $request)
     {
         if($request->hasFile('fileUpload'))
@@ -69,7 +64,8 @@ class ChallengeController extends Controller
         }
         else
         {
-            echo "Sai";
+            Session::flash('error', 'Đáp án không chính xác. 〤');
+            return redirect()->back();
         }
     }
 

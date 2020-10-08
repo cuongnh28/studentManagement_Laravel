@@ -3,7 +3,7 @@
 <head>
     @extends('Layout.header')
     @section('content')
-    <meta charset="utf-8">
+        <meta charset="utf-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <style>
             body {font-family:Arial, Sans-Serif;}
@@ -16,7 +16,7 @@
             input[type='submit']{padding: 10px 25px 8px; color: #fff; background-color: #0067ab; text-shadow: rgba(0,0,0,0.24) 0 1px 0; font-size: 16px; box-shadow: rgba(255,255,255,0.24) 0 2px 0 0 inset,#fff 0 1px 0 0; border: 1px solid #0164a5; border-radius: 2px; margin-top: 10px; cursor:pointer;}
             input[type='submit']:hover {background-color: #024978;}
         </style>
-    <title>Thêm sinh viên</title>
+        <title>Thêm sinh viên</title>
 </head>
 <body>
 <div class="form">
@@ -29,7 +29,7 @@
         <input type="text" name="phone" placeholder="Số điện thoại" required/>
         <input type="password" name="password" placeholder="Mật khẩu" required/> <br><br>
         <td><button type="submit" class="btn btn-success" name="submit">Thêm</button></td>
-{{--        <input type="submit" style="background-color:#28a745" name="submit" value="Thêm"/>--}}
+        {{--        <input type="submit" style="background-color:#28a745" name="submit" value="Thêm"/>--}}
     </form>
     @if(Session::has('success'))
         <p style="color: #5cb85c"><strong>{{Session::get('success')}}</strong></p>

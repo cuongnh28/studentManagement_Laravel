@@ -3,28 +3,28 @@
 <head>
     @extends('Layout.header')
     @section('content')
-    <style>
-        #footer{
-            text-align: left;
-            font-size: 80%;
-            border-top: 1px solid pink;
-            margin-top: 20px;
-            padding: 2px 50px;
-        }
-    </style>
-    <meta charset="UTF-8">
-    <title> User List </title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <style>
+            #footer{
+                text-align: left;
+                font-size: 80%;
+                border-top: 1px solid pink;
+                margin-top: 20px;
+                padding: 2px 50px;
+            }
+        </style>
+        <meta charset="UTF-8">
+        <title> User List </title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container" style="margin-left: 20px; margin-bottom: 15px">
@@ -44,8 +44,8 @@
                     <th>Chức vụ</th>
                     <th>Action</th>
                     @if(session('level')==0)
-                    <th>Action</th>
-                    <th>Action</th>
+                        <th>Action</th>
+                        <th>Action</th>
                     @endif
                 </tr>
                 </thead>
@@ -63,8 +63,8 @@
                         @endif
                         <td><button class="btn btn-primary" onclick="window.location='{{ route('message', $user->username) }}'">Nhắn tin</button></td>
                         @if($user->level==1 && session('level')==0)
-                        <td><button class="btn btn-warning" onclick="window.location='{{ url("student/"."{$user->id}"."/edit") }}'">Sửa</button></td>
-                        <td><button class="btn btn-danger" onclick="window.location='{{ url("student/"."{$user->id}"."/delete") }}'">Xóa</button></td>
+                            <td><button class="btn btn-warning" onclick="window.location='{{ url("student/"."{$user->id}"."/edit") }}'">Sửa</button></td>
+                            <td><button class="btn btn-danger" onclick="window.location='{{ url("student/"."{$user->id}"."/delete") }}'">Xóa</button></td>
                         @endif
                     </tr>
                 @endforeach

@@ -41,12 +41,11 @@
         </ul>
     </div>
     <div id="content">
-        <div id="call-to-action">
-            <h3> Viettel Cyber Sercurity </h3>
-            <p> Ứng dụng quản lý sinh viên - Laravel </p>
+        <div id="header">
+            <div id="logo"> <img src="{{asset('css/vt.png')}}"> </div>
+            <div id="slogan"> Học và thực hành web laravel cơ bản </div>
         </div>
     </div>
-{{--    <div id="footer"> Copyright &copy;2020 by hongcuongnguyen </div>--}}
 </div>
 </body>
 <div class="container">

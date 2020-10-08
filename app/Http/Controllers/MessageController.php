@@ -27,22 +27,11 @@ class MessageController extends Controller
         return view('Message.inbox')->with('inbox', $getdata);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create($receiver)
     {
         return view('Message.create_message',compact('receiver'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request, $receiver)
     {
         $requestAll = $request->all();
@@ -86,13 +75,6 @@ class MessageController extends Controller
         return view('Message.edit_message')->with('getMessageByID',$getData);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request)
     {
         $updateData = DB::table('messages')->where('id', $request->id)->update([
@@ -111,12 +93,6 @@ class MessageController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $deleteData = DB::table('messages')->where('id', '=', $id)->delete();

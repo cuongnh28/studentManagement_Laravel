@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <style>
             #footer{
+                text-align: left;
                 font-size: 80%;
                 border-top: 1px solid pink;
                 margin-top: 20px;

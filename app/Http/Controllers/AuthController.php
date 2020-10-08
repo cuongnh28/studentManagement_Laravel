@@ -12,6 +12,7 @@ class AuthController extends Controller
     {
         $username = $request['username'];
         $password = $request['password'];
+//        Auth::user()->name();
         if(Auth::attempt(['username'=>$username, 'password'=>$password]))
         {
             session(['id' => Auth::id()]);

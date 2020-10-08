@@ -3,38 +3,46 @@
 <head>
     @extends('Layout.header')
     @section('content')
-    <meta charset="UTF-8">
-    <title>List Student's answers</title>
-    <style>
-        .table-bordered td, .table-bordered th {
-            border: 1px solid #dee2e6;
-        }
-        .container {
-            width: 100%;
-            padding-right: 15px;
-            padding-left: 15px;
-            margin-right: auto;
-            margin-left: auto;
-            text-align: center;
-        }
-        *{
-            box-sizing: border-box;
-        }
-        body{
-            margin-left: 20px;
-        }
-    </style>
-    <title>Bài làm của sinh viên</title>
-    <div>
-        <h2>Danh sách bài tập đã nộp</h2>
-    </div>
+        <meta charset="UTF-8">
+        <title>List Student's answers</title>
+        <style>
+            #footer{
+                text-align: left;
+                font-size: 80%;
+                border-top: 1px solid pink;
+                margin-top: 20px;
+                padding: 2px 50px;
+                margin-left: 60px;
+            }
+            .table-bordered td, .table-bordered th {
+                border: 1px solid #dee2e6;
+            }
+            .container {
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-right: auto;
+                margin-left: auto;
+                text-align: center;
+            }
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                margin-left: 20px;
+            }
+        </style>
+        <title>Bài làm của sinh viên</title>
+        <div>
+            <h2>Danh sách bài tập đã nộp</h2>
+        </div>
 
-    <!-- jQuery library -->
-    <script src="lib/jquery.min.js"></script>
-    <!-- Popper JS -->
-    <script src="lib/popper.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <!-- jQuery library -->
+        <script src="lib/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="lib/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container" style="margin-left: 20px; margin-bottom: 15px">
@@ -57,8 +65,8 @@
         @endforeach
         </tbody>
     </table>
+    <div id="footer"> Copyright &copy;2020 by hongcuongnguyen </div>
 </div>
-<div id="footer"> Copyright &copy;2020 by hongcuongnguyen </div>
 </body>
 </html>
 @endsection

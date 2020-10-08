@@ -6,6 +6,13 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <style>
+            #footer{
+                text-align: left;
+                font-size: 80%;
+                border-top: 1px solid pink;
+                margin-top: 20px;
+                padding: 2px 50px;
+            }
             body {font-family:Arial, Sans-Serif;}
             .clearfix:before, .clearfix:after { content: ""; display: table; }
             .clearfix:after { clear: both; }
@@ -40,6 +47,7 @@
         <p style="color: #ff0000"><strong>{{Session::get('error')}}</strong></p>
     @endif
 </div>
+<div id="footer"> Copyright &copy;2020 by hongcuongnguyen </div>
 </body>
 @endsection
 </html>

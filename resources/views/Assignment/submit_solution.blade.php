@@ -3,8 +3,8 @@
 <head>
     @extends('Layout.header')
     @section('content')
-    <meta charset="utf-8">
-    <title>Nộp bài làm</title>
+        <meta charset="utf-8">
+        <title>Nộp bài làm</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <style>
