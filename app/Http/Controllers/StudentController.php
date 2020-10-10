@@ -99,7 +99,7 @@ class StudentController extends Controller
     {
 //        echo $id;
         //Lấy dữ liệu từ Database với các trường được lấy và với điều kiện id = $id
-        $getData = DB::table('Users')->select('id','username','name', 'email', 'phone', 'password')->where('id',$id)->get();
+        $getData = DB::table('users')->select('id','username','name', 'email', 'phone', 'password')->where('id',$id)->get();
 
         //Tra ve Data voi id truyen vao.
         return view('Student.edit_student')->with('getStudentById',$getData);
